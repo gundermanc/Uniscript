@@ -18,7 +18,7 @@ namespace Uniscript
         /// </summary>
         /// <param name="key">The key that already exists.</param>
         public UniKeyExistsException(string key)
-            : base(string.Format("\"{0}\" key already exists in current scope in SymbolTable."))
+            : base(string.Format("\"{0}\" key already exists in current scope in SymbolTable.", key))
         {
         }
     }

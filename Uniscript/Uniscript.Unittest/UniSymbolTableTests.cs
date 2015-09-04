@@ -151,7 +151,7 @@
         }
 
         /// <summary>
-        /// Checks that empty, null, and whitespace values are rejected.
+        /// Checks that null values are rejected.
         /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -163,21 +163,7 @@
                 this.table[Key1] = null;
             };
 
-            action1.ShouldThrow<ArgumentException>("value cannot be null");
-
-            Action action2 = () =>
-            {
-                this.table[Key2] = string.Empty;
-            };
-
-            action2.ShouldThrow<ArgumentException>("key cannot be empty");
-
-            Action action3 = () =>
-            {
-                this.table[Key3] = Whitespace;
-            };
-
-            action3.ShouldThrow<ArgumentException>("key cannot be whitespace");
+            action1.ShouldThrow<ArgumentNullException>("value cannot be null");
         }
 
         /// <summary>
@@ -237,6 +223,22 @@
             this.table.Pop();
             this.table.Pop();
             this.table.Depth.Should().Be(1, "we popped new scopes");
+        }
+
+        /// <summary>
+        /// Checks for an exception if the caller tries to pop the default context.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("UniSymbolTable")]
+        public void Pop_PopDefaultContext_ExceptionThrown()
+        {
+            Action action = () =>
+            {
+                this.table.Pop();
+            };
+
+            action.ShouldThrow<UniNoMoreContextsException>("default context cannot be popped");
         }
     }
 }

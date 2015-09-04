@@ -18,7 +18,7 @@ namespace Uniscript
         /// </summary>
         /// <param name="key">The key that could not be found.</param>
         public UniKeyNotFoundException(string key)
-            : base(string.Format("\"{0}\" key cannot be found in SymbolTable."))
+            : base(string.Format("\"{0}\" key cannot be found in symbol table.", key))
         {
         }
     }
