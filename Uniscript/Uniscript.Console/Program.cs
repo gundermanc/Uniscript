@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//----------------------------------------------------------------------- 
+// <copyright file="Program.cs" company="Gundersoft"> 
+//     Copyright (c) Christian Gunderman. All rights reserved. 
+// </copyright> 
+// <author>Christian Gunderman</author> 
+//----------------------------------------------------------------------- 
 
 namespace Uniscript.Console
 {
-    class Program
+    /// <summary>
+    /// Command line UI entry point.
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Application entry point.
+        /// </summary>
+        /// <param name="args">The application's command line arguments.</param>
+        internal static void Main(string[] args)
         {
         }
     }

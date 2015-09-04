@@ -1,4 +1,11 @@
-﻿using System.Reflection;
+﻿//----------------------------------------------------------------------- 
+// <copyright file="AssemblyInfo.cs" company="Gundersoft"> 
+//     Copyright (c) Christian Gunderman. All rights reserved. 
+// </copyright> 
+// <author>Christian Gunderman</author> 
+//----------------------------------------------------------------------- 
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
