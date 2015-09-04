@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="IUniSymbolTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UniKeyExistsException.cs" />
     <Compile Include="UniKeyNotFoundException.cs" />
     <Compile Include="UniException.cs" />
+    <Compile Include="UniSymbolTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

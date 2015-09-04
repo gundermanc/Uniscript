@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------------------------- 
-// <copyright file="IUniSymbolTable.cs" company="Gundersoft"> 
+// <copyright file="UniSymbolTable.cs" company="Gundersoft"> 
 //     Copyright (c) Christian Gunderman. All rights reserved. 
 // </copyright> 
 // <author>Christian Gunderman</author> 
@@ -7,16 +7,24 @@
 
 namespace Uniscript
 {
+    using System;
+
     /// <summary>
-    /// The SymbolTable interface.
+    /// The default symbol table implementation.
     /// </summary>
-    /// <typeparam name="TValue">The type of the SymbolTable values.</typeparam>
-    public interface IUniSymbolTable<TValue>
+    /// <typeparam name="TValue">The type for the symbol table values.</typeparam>
+    internal class UniSymbolTable<TValue> : IUniSymbolTable<TValue>
     {
         /// <summary>
         /// Gets the current depth of the symbol table.
         /// </summary>
-        int Depth { get; }
+        public int Depth
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// Gets or sets a value in the symbol table. By default, adds the item to the
@@ -32,12 +40,26 @@ namespace Uniscript
         /// <param name="key">The key to lookup in the symbol table.</param>
         /// <param name="fromTopOnly">If true, checks only the top table.</param>
         /// <returns>The value from the first scope that defines the key.</returns>
-        TValue this[string key, bool fromTopOnly = false] { get; set; }
+        public TValue this[string key, bool fromTopOnly = false]
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// Pushes a new level on to the symbol table.
         /// </summary>
-        void Push();
+        public void Push()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Pops the top level from the symbol table.
@@ -45,6 +67,9 @@ namespace Uniscript
         /// <exception cref="InvalidOperationException">
         /// Thrown if there is only one table remaining.
         /// </exception>
-        void Pop();
+        public void Pop()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

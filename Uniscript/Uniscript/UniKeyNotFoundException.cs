@@ -8,7 +8,7 @@
 namespace Uniscript
 {
     /// <summary>
-    /// The given key was not found in 
+    /// The given key was not found in symbol table exception.
     /// </summary>
     public sealed class UniKeyNotFoundException : UniException
     {
