@@ -66,6 +66,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Tokens\UniTokenTests.cs" />
     <Compile Include="UniSymbolTableTests.cs" />
   </ItemGroup>
   <ItemGroup>
