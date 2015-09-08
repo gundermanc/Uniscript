@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Tokens\UniTokenTests.cs" />
+    <Compile Include="UniLexerTests.cs" />
     <Compile Include="UniSymbolTableTests.cs" />
   </ItemGroup>
   <ItemGroup>

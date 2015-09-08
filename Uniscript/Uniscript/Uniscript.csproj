@@ -59,6 +59,7 @@
     <Compile Include="UniKeyExistsException.cs" />
     <Compile Include="UniKeyNotFoundException.cs" />
     <Compile Include="UniException.cs" />
+    <Compile Include="UniLexer.cs" />
     <Compile Include="UniNoMoreContextsException.cs" />
     <Compile Include="UniSymbolTable.cs" />
   </ItemGroup>
