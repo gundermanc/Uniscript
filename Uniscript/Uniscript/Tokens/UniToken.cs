@@ -12,8 +12,7 @@ namespace Uniscript.Tokens
     /// <summary>
     /// Basic token class implementation.
     /// </summary>
-    /// <typeparam name="TValue">The type of the value stored within.</typeparam>
-    public class UniToken<TValue> : IUniToken<TValue>
+    public class UniToken : IUniToken
     {
         /// <summary>
         /// Stores the type readonly.
@@ -23,7 +22,7 @@ namespace Uniscript.Tokens
         /// <summary>
         /// Stores the value readonly.
         /// </summary>
-        private readonly TValue value;
+        private readonly object value;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UniToken{TValue}"/>
@@ -33,7 +32,7 @@ namespace Uniscript.Tokens
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", 
             "SA1642:ConstructorSummaryDocumentationMustBeginWithStandardText",
             Justification = "StyleCop is incorrectly reading the text here.")]
-        public UniToken(UniTokenType type, TValue value)
+        public UniToken(UniTokenType type, object value)
         {
             this.type = type;
             this.value = value;
@@ -51,14 +50,24 @@ namespace Uniscript.Tokens
         }
 
         /// <summary>
-        /// Gets the token's value.
+        /// Gets the value of this token.
         /// </summary>
-        public TValue Value
+        /// <typeparam name="TValue">
+        /// The desired return type.
+        /// </typeparam>
+        /// <exception cref="InvalidOperationException">
+        /// Value is of a different type.
+        /// </exception>
+        /// <returns>The value in the desired return type.</returns>
+        public TValue GetValue<TValue>()
         {
-            get
+            // Check value is the type expected by the caller.
+            if (this.value.GetType() != typeof(TValue))
             {
-                return this.value;
+                throw new UniInvalidTokenTypeException();
             }
+
+            return (TValue)this.value;
         }
     }
 }

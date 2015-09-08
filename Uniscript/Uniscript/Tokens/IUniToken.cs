@@ -10,8 +10,7 @@ namespace Uniscript.Tokens
     /// <summary>
     /// The interface for all tokens.
     /// </summary>
-    /// <typeparam name="TValue">The type of the value stored within this token.</typeparam>
-    public interface IUniToken<TValue>
+    public interface IUniToken
     {
         /// <summary>
         /// Gets a value indicating the token type.
@@ -19,8 +18,15 @@ namespace Uniscript.Tokens
         UniTokenType Type { get; }
 
         /// <summary>
-        /// Gets the value of the token.
+        /// Gets the value of this token.
         /// </summary>
-        TValue Value { get; }
+        /// <typeparam name="TValue">
+        /// The desired return type.
+        /// </typeparam>
+        /// <exception cref="InvalidOperationException">
+        /// Value is of a different type.
+        /// </exception>
+        /// <returns>The value in the desired return type.</returns>
+        TValue GetValue<TValue>();
     }
 }

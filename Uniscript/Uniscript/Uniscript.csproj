@@ -52,6 +52,7 @@
     <Compile Include="Tokens\IUniToken.cs" />
     <Compile Include="Tokens\UniToken.cs" />
     <Compile Include="Tokens\UniTokenType.cs" />
+    <Compile Include="UniInvalidTokenTypeException.cs" />
     <Compile Include="UniKeyExistsException.cs" />
     <Compile Include="UniKeyNotFoundException.cs" />
     <Compile Include="UniException.cs" />
