@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeContractExtensions.cs" />
+    <Compile Include="IUniLexer.cs" />
     <Compile Include="IUniSymbolTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens\IUniToken.cs" />
